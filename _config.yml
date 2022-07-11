@@ -31,7 +31,7 @@ github_username:  jekyll
 logo: /assets/logo2.png
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "air"
 search: true
 
