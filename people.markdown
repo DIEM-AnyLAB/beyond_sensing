@@ -1,6 +1,7 @@
 ---
 title: "Our team"
 layout: single
+permalink: /people/
 ---
 <style>
 .author-wrapper {
