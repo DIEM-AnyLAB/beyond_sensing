@@ -1,6 +1,7 @@
 ---
 title: About
 permalink: /about/
+layout: single
 header:
   image: /assets/about.jpg
 ---
