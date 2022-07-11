@@ -21,13 +21,13 @@
 title: Beyond Sensing
 title_separator: "|"
 subtitle: "Campus Bio-Medico University of Rome"
-email: your-email@example.com
+email: costanza.cenerini@unicampus.it
 description: >- # this means to ignore newlines until "baseurl:"
-  A cross-modal study by Università Campus Bio-Medico di Roma
+  A cross-modal study by Campus Bio-Medico University of Rome
 baseurl: "beyond_sensing" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+#twitter_username: jekyllrb
+github_username:  costanzac
 logo: /assets/logo2.png
 
 # Build settings
@@ -45,6 +45,7 @@ footer:
   links:
     - label: "UCBM"
       url: "https://unicampus.it"
+      icon: /assets/logo_ucbm.png
 
 plugins:
   - jekyll-feed

@@ -1,5 +1,5 @@
 ---
-title: Research
+title: Publications
 permalink: /research/
 layout: single
 ---
@@ -21,6 +21,8 @@ D’Amico, A., Santonico, M., Pennazza, G., Zompanti, A., Scipioni, E., Ferri, G
 Pinzari, M., Santonico, M., Pennazza, G., Martinelli, E., Capuano, R., Paolesse, R., ... & Di Natale, C. (2018). Chemically mediated species recognition in two sympatric Grayling butterflies: Hipparchia fagi and Hipparchia hermione (Lepidoptera: Nymphalidae, Satyrinae). PloS one, 13(6), e0199997.
 
 D’Amico, A., Di Natale, C., Falconi, C., Pennazza, G., Santonico, M., & Lundstrom, I. (2017). Equivalent electric circuits for chemical sensors in the langmuir regime. Sensors and Actuators B: Chemical, 238, 214-220.
+
+Choraś, M., Kozik, R., D’Antonio, S., Iannello, G., Jedlitschka, A., Miesenberger, K., Vollero, L. and Wołoszczuk, A., 2015. Innovative solutions for inclusion of totally blind people. In Ambient Assisted Living (pp. 422-453). Boca Raton, FL, USA: CRC Press.
 
 Teodoro-Morrison, T., Diamandis, E. P., Rifai, N., Weetjens, B. J. C., Pennazza, G., de Boer, N. K., & Bomers, M. K. (2014). Animal olfactory detection of disease: promises and pitfalls. Clinical Chemistry, 60(12), 1473-1479.
 
