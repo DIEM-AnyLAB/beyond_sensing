@@ -3,6 +3,8 @@ title:  "Partecipation to ACAIN in September"
 date:   2022-07-04 10:20:13 +0200
 categories: jekyll update
 permalink: ":categories/:title"
+header:
+  image: /assets/post4.jpg
 ---
 
 accepted paper blabla
