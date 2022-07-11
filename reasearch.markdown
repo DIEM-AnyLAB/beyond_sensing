@@ -2,6 +2,8 @@
 title: Publications
 permalink: /research/
 layout: single
+header:
+  image: /assets/research.jpg
 ---
 
 Saunders, William, et al. "Self-critiquing models for assisting human evaluators." arXiv preprint arXiv:2206.05802 (2022).
