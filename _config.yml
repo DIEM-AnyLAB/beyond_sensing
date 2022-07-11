@@ -21,7 +21,7 @@
 title: Beyond Sensing
 title_separator: "|"
 subtitle: "Campus Bio-Medico University of Rome"
-email: your-email@example.com
+email: costanza.cenerini@unicampus.it
 description: >- # this means to ignore newlines until "baseurl:"
   A cross-modal study by Università Campus Bio-Medico di Roma
 baseurl: "beyond_sensing" # the subpath of your site, e.g. /blog

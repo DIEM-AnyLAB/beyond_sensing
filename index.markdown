@@ -8,4 +8,4 @@ header:
 title: "Beyond sensing: a cross-modal research"
 classes: wide
 ---
-bla bla contenuto
+bla bla contenuto da modificare
