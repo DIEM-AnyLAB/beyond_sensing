@@ -11,6 +11,7 @@ Synesthesia is a sensorial-perceptive phenomenon in which certain stimuli evoke 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/88s6guf9egs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 A better comprehension of the phenomenon could lead to various results:
 • In the short term: studying the relationship between music, images and emotion in subjects who do not experience synaesthesia;
 • In the long term: develop a teaching aid to improve learning and memory
