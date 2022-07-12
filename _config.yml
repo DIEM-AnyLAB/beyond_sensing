@@ -23,7 +23,7 @@ title_separator: "|"
 subtitle: "Campus Bio-Medico University of Rome"
 email: costanza.cenerini@unicampus.it
 description: >- # this means to ignore newlines until "baseurl:"
-  A cross-modal study by Campus Bio-Medico University of Rome
+  Beyon Sensing - A cross-modal study by Campus Bio-Medico University of Rome - UCBM
 baseurl: "beyond_sensing" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
