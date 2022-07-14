@@ -1,18 +1,9 @@
 ---
-title:  "Participation to ACAIN in September"
-date:   2022-07-04 10:20:13 +0200
+title:  "First results with colour-music association in children"
+date:   2022-07-14 16:26:13 +0200
 categories: jekyll update
 permalink: ":categories/:title"
 header:
-  image: /assets/pontignano.jpg
+  image: /assets/post_bimbi.jpg
 ---
-
-The [ACAIN 2022](https://acain2022.artificial-intelligence-sas.org/) symposium and course is an interdisciplinary event featuring leading scientists from AI and Neuroscience, providing a special opportunity to learn about cutting-edge research in the fields of AI, Neuroscience, Neuroscience-Inspired AI, Human-Level AI, and Cognitive Science.
-
-The 2nd Advanced Course and Symposium on Artificial Intelligence  & Neuroscience (ACAIN) is a full-immersion four-day residential (or online) Course and Symposium at the Certosa di Pontignano (Italy) on cutting-edge advances in Artificial Intelligence and Neuroscience with lectures delivered by world-renowned experts. The Course provides a stimulating environment for academics, early career researchers, Post-Docs, PhD students and industry leaders. Participants will also have the chance to present their results with oral talks or posters, and to interact with their colleagues, in a convivial and productive environment.
-
-Two days of keynote talks and oral presentations, the ACAIN Symposium, (September 21-22), will be preceded by lectures of leading scientists, the ACAIN Course, (September 18-20).
-
-Bringing together AI and neuroscience promises to yield benefits for both fields. The future impact and progress in both AI and Neuroscience will strongly depend on continuous synergy, exchange, collaboration and efficient cooperation between the two research communities.  These are the goals of the International Course and Symposium – ACAIN 2022, which is aimed both  at AI experts with interests in Neuroscience and at neuroscientists with an interest in AI.  ACAIN 2022 accepts rigorous research that promotes and fosters multidisciplinary interactions between artificial intelligence and neuroscience.
-
-Our short paper "Audio Visual Association test in non synesthetic subjects: Technological Tailoring of the methods", presenting the development of the synaesthesia test's platform was accepted and will be presented during the conference.
+[Click here](/p5/ColorPickerArmonico)
