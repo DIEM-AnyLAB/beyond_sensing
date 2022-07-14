@@ -20,7 +20,7 @@
 
 title: Beyond Sensing
 title_separator: "|"
-subtitle: "Campus Bio-Medico University of Rome"
+subtitle: ""
 email: costanza.cenerini@unicampus.it
 description: >- # this means to ignore newlines until "baseurl:"
   Beyon Sensing - A cross-modal study by Campus Bio-Medico University of Rome - UCBM
@@ -43,8 +43,8 @@ atom_feed:
 
 footer:
   links:
-    - label: "UCBM"
-      url: "https://unicampus.it"
+    - label: ""
+      url: ""
       icon: /assets/logo_ucbm.png
 
 plugins:
