@@ -63,6 +63,6 @@ The table below shows results from investigating 4 children, ranging from 7 to 1
 
 Results show that associations number 1 - 2 and 4 were the most liked. The first two were appreciated by all four children, whereas number 4 got its high score thanks to the very high score given to it by a single children, but was not rated high by the other children.
 
-If you are curious to experience what association 1 and 2 loom and sound like, you can
+If you are curious to experience what association 1 and 2 look and sound like, you can
 [Click here](/beyond_sensing/p5/ColorPickerArmonico/)
 [Click here 2](/beyond_sensing/p5/TestMappatura/)
