@@ -7,5 +7,5 @@ header:
   image: /assets/post_bimbi.jpg
 ---
 [Click here](/p5/ColorPickerArmonico/)
-[Click here 2](/p5/ColorPickerArmonico/index.html)
+[Click here 2](/p5/TestMappatura/)
 [Click here 3](/p5/)
