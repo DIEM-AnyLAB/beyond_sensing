@@ -18,42 +18,42 @@ The table below shows results from investigating 4 children, ranging from 7 to 1
     <td>Number of times the association was chosen</td>
   </tr>
   <tr>
-    <td>1</td>
+    <td>1.</td>
     <td>Fundamental note</td>
     <td>Octave on the piano</td>
     <td>Chord's mode</td>
     <td>16</td>
   </tr>
   <tr>
-    <td>2</td>
+    <td>2.</td>
     <td>Octave on the piano</td>
     <td>Chord's mode</td>
     <td>Fundamental note</td>
     <td>12</td>
   </tr>
   <tr>
-    <td>3</td>
+    <td>3.</td>
     <td>Fundamental note</td>
     <td>Chord's mode</td>
     <td>Octave on the piano</td>
     <td>6</td>
   </tr>
   <tr>
-    <td>4</td>
+    <td>4.</td>
     <td>Chord's mode</td>
     <td>Octave on the piano</td>
     <td>Fundamental note</td>
     <td>14</td>
   </tr>
   <tr>
-    <td>5</td>
+    <td>5.</td>
     <td>Chord's mode</td>
     <td>Fundamental note</td>
     <td>Octave on the piano</td>
     <td>4</td>
   </tr>
   <tr>
-    <td>6</td>
+    <td>6.</td>
     <td>Octave on the piano</td>
     <td>Fundamental note</td>
     <td>Chord's mode</td>
