@@ -1,5 +1,5 @@
 ---
-title: "Synaesthesia Project"
+title: "ASSISI Project"
 permalink: /projects/
 ---
 
