@@ -191,7 +191,7 @@ function suona(h,s,b){
     title.html('You are listening to a ' + n.tonica + altezza +' major');
   } else {
     acc.playMinore(n,altezza);
-    title.html('You are listening to a ' + n.tonica + altezza +' minor');
+    title.html('You are listening to a ' + n.tonica + altezza +' minor ');
   }
 
 }
