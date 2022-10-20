@@ -22,13 +22,7 @@ async function preload(){
 function setup() {
   picker = createColorPicker('white');
   createCanvas(windowWidth,windowHeight);
-  title = createElement('h1','Stai ascoltando una nota di uno strumento');
-  sliderModo = createSlider(0,2,1,1);
-  sliderTonalita = createSlider(0,2,0,1);
-  sliderAltezza = createSlider(0,2,2,1);
-  sliderModob = createSlider(0,1,0);
-  sliderTonalitab = createSlider(0,1,0);
-  sliderAltezzab = createSlider(0,1,0);
+  title = createElement('h1','You are listening to a note played by an instrument');
   s1 = createElement('h1', 'Accordo');
 
 }
@@ -41,12 +35,6 @@ function draw() {
     title.center('horizontal');
     title.style('font-size','40px');
     picker.position(windowWidth*0.3,windowHeight*0.2);
-    sliderModo.position(windowWidth*0.6,windowHeight*0.3);
-    sliderTonalita.position(windowWidth*0.6,windowHeight*0.5);
-    sliderAltezza.position(windowWidth*0.6,windowHeight*0.7);
-    sliderModob.position(windowWidth*0.8,windowHeight*0.3);
-    sliderTonalitab.position(windowWidth*0.8,windowHeight*0.5);
-    sliderAltezzab.position(windowWidth*0.8,windowHeight*0.7);
     background(picker.color());
     line(windowWidth*0.2,windowHeight*0.22,windowWidth*0.28,windowHeight*0.22);
     line(windowWidth*0.28,windowHeight*0.22,windowWidth*0.27,windowHeight*0.21);
@@ -54,18 +42,15 @@ function draw() {
     h=hue(picker.color());
     s=saturation(picker.color());
     b=brightness(picker.color());
-    vala = sliderAltezza.value();
-    valt = sliderTonalita.value();
-    valm = sliderModo.value();
-    valab = sliderAltezzab.value();
-    valtb = sliderTonalitab.value();
-    valmb = sliderModob.value();
+    vala = 1;
+    valt = 0;
+    valm = 2;
     if(b>80 ){
       title.style('color','black');
     } else {
       title.style('color','white');
     }
-    if ((h!=h_ || s!=s_ || b!=b_ || vala!=vala_ || valm!=valm_ || valt!=valt_ || valab!=valab_ || valmb!=valmb_ || valtb!=valtb_)&& (millis()-tempo)>300){
+    if ((h!=h_ || s!=s_ || b!=b_ || vala!=vala_ || valm!=valm_ || valt!=valt_ )&& (millis()-tempo)>300){
       tempo=millis();
       h_=h;
       s_=s;
@@ -73,9 +58,6 @@ function draw() {
       vala_=vala;
       valm_=valm;
       valt_=valt;
-      valab_=valab;
-      valmb_=valmb;
-      valtb_=valtb;
       cambio=true;
     }
 
@@ -133,34 +115,23 @@ function suona(h,s,b){
     a=b;
   }
   // corrispondenza valore - altezza dell'accordo
-  let altezza, altezza1, altezza2;
+  let altezza;
   if(a>85.7){
-    altezza1 = 7;
-    altezza2 = 1;
+    altezza = 7;
   } else if (a>71.4){
-    altezza1 = 6;
-    altezza2 = 2;
+    altezza = 6;
   } else if (a>57.1){
-    altezza1 = 5;
-    altezza2 = 3;
+    altezza = 5;
   } else if (a>42.8){
-    altezza1 = 4;
-    altezza2 = 4;
+    altezza = 4;
   } else if (a>28.5){
-    altezza1 = 3;
-    altezza2 = 5;
+    altezza = 3;
   } else if (a>14.3){
-    altezza1 = 2;
-    altezza2 = 6;
+    altezza = 2;
   } else {
-    altezza1 = 1;
-    altezza2 = 7;
+    altezza = 1;
   }
-  if(valab==0){
-    altezza=altezza1;
-  } else{
-    altezza=altezza2;
-  }
+
 
   // corrispondenza valore - tonalità
 
@@ -172,50 +143,34 @@ function suona(h,s,b){
     a=b;
   }
 
-  let n,n1,n2;
+  let n;
   if (a>330){
-    n1 = 1;
-    n2 = 11;
+    n = 1;
   } else if (a>300){
-    n1 =2;
-    n2 = 11;
+    n =2;
   } else if (a>270){
-    n1 =3;
-    n2 = 10;
+    n =3;
   } else if (a>240){
-    n1 =4;
-    n2 = 9;
+    n =4;
   } else if (a>210){
-    n1 =5;
-    n2 = 8;
+    n =5;
   } else if (a>180){
-    n1 =6;
-    n2 = 7;
+    n =6;
   } else if (a>150){
-    n1 =7;
-    n2 = 6;
+    n =7;
   } else if (a>120){
-    n1 =8;
-    n2 = 5;
+    n =8;
   } else if (a>90){
-    n1 =9;
-    n2 = 4;
+    n =9;
   } else if (a>60){
-    n1 =10;
-    n2 = 3;
+    n =10;
   } else if (a>30){
-    n1 =11;
-    n2 = 2;
+    n =11;
   } else {
-    n1 =12;
-    n2 = 1;
-  }
+    n =12;
+}
 
-  if (valtb==0){
-    n = new Nota(n1);
-  } else {
-    n = new Nota(n2);
-  }
+  n = new Nota(n);
 
   // corrispondenza valore - Accordo
 
@@ -229,27 +184,14 @@ function suona(h,s,b){
   }
 
   if(a>60){
-    if(valtb==0){
-      acc.playSettima(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' settima');
-    } else {
-      acc.playMinore(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' minore');
-    }
-
+    acc.playSettima(n,altezza);
+    title.html('Stai ascoltando un ' + n.tonica + altezza +' settima');
   } else if (a>30){
     acc.playMaggiore(n,altezza);
     title.html('Stai ascoltando un ' + n.tonica + altezza +' maggiore');
-
   } else {
-    if(valtb==0){
-      acc.playMinore(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' minore');
-    } else {
-      acc.playSettima(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' settima');
-    }
-
+    acc.playMinore(n,altezza);
+    title.html('Stai ascoltando un ' + n.tonica + altezza +' minore');
   }
 
 }
