@@ -185,13 +185,13 @@ function suona(h,s,b){
 
   if(a>60){
     acc.playSettima(n,altezza);
-    title.html('Stai ascoltando un ' + n.tonica + altezza +' settima');
+    title.html('You are listening to a ' + n.tonica + altezza +' seventh');
   } else if (a>30){
     acc.playMaggiore(n,altezza);
-    title.html('Stai ascoltando un ' + n.tonica + altezza +' maggiore');
+    title.html('You are listening to a ' + n.tonica + altezza +' major');
   } else {
     acc.playMinore(n,altezza);
-    title.html('Stai ascoltando un ' + n.tonica + altezza +' minore');
+    title.html('You are listening to a ' + n.tonica + altezza +' minor');
   }
 
 }

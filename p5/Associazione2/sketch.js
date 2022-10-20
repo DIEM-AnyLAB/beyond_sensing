@@ -1,45 +1,63 @@
-let col, width, height;
+let col, picker, width, height;
 let h, s, b;
 let h_, s_, b_;
 let cambio,durata;
 let title, ac, piano, fine=false;
-let vala, valm, valt;
-let valtb=0, valmb=0, valab=0;
+let sliderTonalita, sliderModo, sliderAltezza;
+let sliderTonalitab, sliderModob, sliderAltezzab;
+
+let valt, valm, vala;
+let valt_, valm_, vala_;
+let valtb, valmb, valab;
+let valtb_, valmb_, valab_;
 let tempo=0;
 let s1,s2,s3,s4,s5;
-let sliderA, sliderM, sliderT,immagine;
-
 
 async function preload(){
   ac = new AudioContext();
   piano = await Soundfont.instrument(ac, 'acoustic_grand_piano');
   fine=true;
-  immagine = loadImage('ladybug.jpg');
 }
 
 function setup() {
+  picker = createColorPicker('white');
   createCanvas(windowWidth,windowHeight);
-  title = createElement('h1','Stai ascoltando una nota di uno strumento');
-  sliderA = createSlider(0,2,0);
-  sliderM = createSlider(0,2,1);
-  sliderT = createSlider(0,2,2);
+  title = createElement('h1','You are listening to a note played by an instrument');
+  s1 = createElement('h1', 'Accordo');
+
 }
 
 function draw() {
-  colorMode(HSB);
   if(fine){
-    vala=sliderA.value();
-    valm=sliderM.value();
-    valt=sliderT.value();
-    posiziona_elementi();
-    h=hue(col);
-    s=saturation(col);
-    b=brightness(col);
-    if ((millis()-tempo)>1000 && mouseX<immagine.width*0.7 && mouseY<immagine.height*0.7){
+    colorMode(HSB);
+    resizeCanvas(windowWidth,windowHeight);
+    title.position(windowWidth/2,windowHeight*0);
+    title.center('horizontal');
+    title.style('font-size','40px');
+    picker.position(windowWidth*0.3,windowHeight*0.2);
+    background(picker.color());
+    line(windowWidth*0.2,windowHeight*0.22,windowWidth*0.28,windowHeight*0.22);
+    line(windowWidth*0.28,windowHeight*0.22,windowWidth*0.27,windowHeight*0.21);
+    line(windowWidth*0.28,windowHeight*0.22,windowWidth*0.27,windowHeight*0.23);
+    h=hue(picker.color());
+    s=saturation(picker.color());
+    b=brightness(picker.color());
+    vala = 0;
+    valt = 2;
+    valm = 1;
+    if(b>80 ){
+      title.style('color','black');
+    } else {
+      title.style('color','white');
+    }
+    if ((h!=h_ || s!=s_ || b!=b_ || vala!=vala_ || valm!=valm_ || valt!=valt_ )&& (millis()-tempo)>300){
       tempo=millis();
       h_=h;
       s_=s;
       b_=b;
+      vala_=vala;
+      valm_=valm;
+      valt_=valt;
       cambio=true;
     }
 
@@ -50,23 +68,6 @@ function draw() {
   }
 
 }
-
-function posiziona_elementi() {
-  colorMode(RGB);
-  resizeCanvas(windowWidth,windowHeight);
-  title.position(windowWidth*0.2,windowHeight*0.88);
-  title.style('font-size','20px');
-  title.style('color','black');
-  image(immagine, 0,0,immagine.width*0.7, immagine.height*0.7)
-  col = color(get(mouseX,mouseY));
-  fill(col);
-  ellipse(mouseX,mouseY,40,40);
-  sliderA.position(windowWidth*0.8,windowHeight*0.2);
-  sliderM.position(windowWidth*0.8,windowHeight*0.4);
-  sliderT.position(windowWidth*0.8,windowHeight*0.6);
-
-}
-
 
 const elenco_note= ['D', 'D#', 'E','F', 'F#','G', 'G#','A','A#','B','C','C#','D', 'D#', 'E','F', 'F#','G', 'G#','A','A#','B','C','C#'];
 
@@ -82,164 +83,115 @@ class Nota{
 
 class Accordo{
 
+  durata = 0.5;
   playMinore(nota, altezza){
-    piano.play(nota.tonica + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.terzam + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.quinta + altezza, ac.currentTime, { duration: 1})
+    piano.play(nota.tonica + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.terzam + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.quinta + altezza, ac.currentTime, { duration: durata})
   }
 
   playMaggiore(nota, altezza){
-    piano.play(nota.tonica + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.terzaM + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.quinta + altezza, ac.currentTime, { duration: 1})
+    piano.play(nota.tonica + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.terzaM + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.quinta + altezza, ac.currentTime, { duration: durata})
   }
 
   playSettima(nota, altezza){
-    piano.play(nota.tonica + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.terzaM + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.quinta + altezza, ac.currentTime, { duration: 1})
-    piano.play(nota.settima + altezza, ac.currentTime, { duration: 1})
+    piano.play(nota.tonica + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.terzaM + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.quinta + altezza, ac.currentTime, { duration: durata})
+    piano.play(nota.settima + altezza, ac.currentTime, { duration: durata})
   }
 
 }
 
 function suona(h,s,b){
-  let max;
+
   if (vala==0){
     a=h;
-    max=360;
   } else if (vala==1){
     a=s;
-    max=100;
   } else if (vala ==2){
     a=b;
-    max=100;
   }
   // corrispondenza valore - altezza dell'accordo
-  let altezza, altezza1, altezza2;
-  if(a>max*0.857){
-    altezza1 = 7;
-    altezza2 = 1;
-  } else if (a>max*0.714){
-    altezza1 = 6;
-    altezza2 = 2;
-  } else if (a>max*0.571){
-    altezza1 = 5;
-    altezza2 = 3;
-  } else if (a>0.428){
-    altezza1 = 4;
-    altezza2 = 4;
-  } else if (a>0.285){
-    altezza1 = 3;
-    altezza2 = 5;
-  } else if (a>0.143){
-    altezza1 = 2;
-    altezza2 = 6;
+  let altezza;
+  if(a>85.7){
+    altezza = 7;
+  } else if (a>71.4){
+    altezza = 6;
+  } else if (a>57.1){
+    altezza = 5;
+  } else if (a>42.8){
+    altezza = 4;
+  } else if (a>28.5){
+    altezza = 3;
+  } else if (a>14.3){
+    altezza = 2;
   } else {
-    altezza1 = 1;
-    altezza2 = 7;
+    altezza = 1;
   }
-  if(valab==0){
-    altezza=altezza1;
-  } else{
-    altezza=altezza2;
-  }
+
 
   // corrispondenza valore - tonalità
 
   if (valt==0){
     a=h;
-    max = 360;
   } else if (valt==1){
     a=s;
-    max=100;
   } else if (valt ==2){
     a=b;
-    max=100;
   }
 
-  let n,n1,n2;
-  if (a>max*0.916){
-    n1 = 1;
-    n2 = 11;
-  } else if (a>max*0.833){
-    n1 =2;
-    n2 = 11;
-  } else if (a>max*0.749){
-    n1 =3;
-    n2 = 10;
-  } else if (a>max*0.667){
-    n1 =4;
-    n2 = 9;
-  } else if (a>max*0.583){
-    n1 =5;
-    n2 = 8;
-  } else if (a>max*0.5){
-    n1 =6;
-    n2 = 7;
-  } else if (a>max*0.417){
-    n1 =7;
-    n2 = 6;
-  } else if (a>max*0.333){
-    n1 =8;
-    n2 = 5;
-  } else if (a>max*0.25){
-    n1 =9;
-    n2 = 4;
-  } else if (a>max*0.167){
-    n1 =10;
-    n2 = 3;
-  } else if (a>max*0.083){
-    n1 =11;
-    n2 = 2;
+  let n;
+  if (a>330){
+    n = 1;
+  } else if (a>300){
+    n =2;
+  } else if (a>270){
+    n =3;
+  } else if (a>240){
+    n =4;
+  } else if (a>210){
+    n =5;
+  } else if (a>180){
+    n =6;
+  } else if (a>150){
+    n =7;
+  } else if (a>120){
+    n =8;
+  } else if (a>90){
+    n =9;
+  } else if (a>60){
+    n =10;
+  } else if (a>30){
+    n =11;
   } else {
-    n1 =12;
-    n2 = 1;
-  }
+    n =12;
+}
 
-  if (valtb==0){
-    n = new Nota(n1);
-  } else {
-    n = new Nota(n2);
-  }
+  n = new Nota(n);
 
   // corrispondenza valore - Accordo
 
   let acc = new Accordo();
   if (valm==0){
     a=h;
-    max=360;
   } else if (valm==1){
     a=s;
-    max=100;
   } else if (valm ==2){
     a=b;
-    max=100;
   }
 
-
-  if(a>max*2/3){
-    if(valtb==0){
-      acc.playSettima(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' settima');
-    } else {
-      acc.playMinore(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' minore');
-    }
-
-  } else if (a>max/3){
+  if(a>60){
+    acc.playSettima(n,altezza);
+    title.html('You are listening to a ' + n.tonica + altezza +' seventh');
+  } else if (a>30){
     acc.playMaggiore(n,altezza);
-    title.html('Stai ascoltando un ' + n.tonica + altezza +' maggiore');
-
+    title.html('You are listening to a ' + n.tonica + altezza +' major');
   } else {
-    if(valtb==0){
-      acc.playMinore(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' minore');
-    } else {
-      acc.playSettima(n,altezza);
-      title.html('Stai ascoltando un ' + n.tonica + altezza +' settima');
-    }
-
+    acc.playMinore(n,altezza);
+    title.html('You are listening to a ' + n.tonica + altezza +' minor');
   }
 
 }
