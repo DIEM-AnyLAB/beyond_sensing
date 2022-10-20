@@ -22,7 +22,7 @@ async function preload(){
 function setup() {
   picker = createColorPicker('white');
   createCanvas(windowWidth,windowHeight);
-  title = createElement('h1','You are listening to a note played by an instrument');
+  title = createElement('h1',' ');
   s1 = createElement('h1', 'Accordo');
 
 }
