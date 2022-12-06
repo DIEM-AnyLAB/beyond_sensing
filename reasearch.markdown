@@ -5,6 +5,7 @@ layout: single
 header:
   image: /assets/research.jpg
 ---
+[Cenerini, Vollero, et al. "Audio Visual Association test in non synesthetic subjects: Technological Tailoring of the methods" presented during the ACAIN 2022 conference - preprint](../assets/ACAIN22_v3.pdf)
 
 Saunders, William, et al. "Self-critiquing models for assisting human evaluators." arXiv preprint arXiv:2206.05802 (2022).
 
